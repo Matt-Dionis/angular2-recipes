@@ -2,7 +2,7 @@
   {{title}}
 </h1>
 <ul>
-  <li>
+  <li *ngFor="let recipe of recipes">
     <p>{{recipe.name}} <span class="badge">{{recipe.type}}</span></p>
   </li>
 </ul>

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Recipe } from './recipe'
+import { Recipe } from './recipe';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +9,14 @@ import { Recipe } from './recipe'
 })
 export class AppComponent {
   title: string = 'Recipes';
-  recipe: Recipe = {
+  recipes: Recipe[] = [{
     type: 'dessert',
     name: 'Chocolate Cake'
-  };
+  },{
+    type: 'appetizer',
+    name: 'Nachos'
+  }, {
+    type: 'entrée',
+    name: 'Chicken Parmesan'
+  }];
 }
