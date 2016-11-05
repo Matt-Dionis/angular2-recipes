@@ -3,6 +3,8 @@
 </h1>
 <ul>
   <li *ngFor="let recipe of recipes">
-    <p>{{recipe.name}} <span class="badge">{{recipe.type}}</span></p>
+    <p>{{recipe.name}}
+      <span [ngClass]="setColor(recipe.type)">{{recipe.type}}</span>
+    </p>
   </li>
 </ul>

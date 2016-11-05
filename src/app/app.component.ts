@@ -8,7 +8,7 @@ import { Recipe } from './recipe';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title: string = 'Recipes';
+  title: String = 'Recipes';
   recipes: Recipe[] = [{
     type: 'dessert',
     name: 'Chocolate Cake'
@@ -19,4 +19,9 @@ export class AppComponent {
     type: 'entrée',
     name: 'Chicken Parmesan'
   }];
+
+  setColor(type: string): string {
+    const color = type === 'appetizer' ? 'blue' : type === 'entrée' ? 'green' : 'red';
+    return color + ' badge';
+  }
 }

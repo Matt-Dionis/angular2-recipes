@@ -7,9 +7,20 @@ ul {
   font-size: small;
   color: white;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color: green;
   top: -4px;
   height: 1.8em;
   margin-left: .8em;
   border-radius: 10%;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.red {
+  background-color: red;
 }
