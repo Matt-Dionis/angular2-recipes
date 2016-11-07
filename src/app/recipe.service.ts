@@ -22,7 +22,7 @@ export class RecipeService {
 
   delete(id: string): Observable<Recipe[]> {
     return this._http.delete(`${this.recipesUrl}/${id}`)
-      .map(this.extractData)
+      .map(() => null)
       .catch(this.handleError);
   }
 

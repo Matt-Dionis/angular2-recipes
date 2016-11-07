@@ -21,6 +21,14 @@ export class AppComponent {
     this.getRecipes();
   }
 
+  deleteRecipe(id: string) {
+    this._recipeService.delete(id)
+      .subscribe(() => {
+        this.recipes = this.recipes.filter(h => h.id !== id),
+        error =>  this.errorMessage = <any>error
+      });
+  }
+
   getRecipes() {
     this._recipeService.query()
       .subscribe(
