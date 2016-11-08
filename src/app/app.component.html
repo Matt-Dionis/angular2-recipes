@@ -5,7 +5,7 @@
   <li *ngFor="let recipe of recipes">
     <p>{{recipe.name}}
       <span [ngClass]="setColor(recipe.type)">{{recipe.type}}</span>
-      <button class="delete" (click)="deleteRecipe(recipe.id)">x</button>
+      <button (click)="deleteRecipe(recipe.id)">x</button>
     </p>
   </li>
 </ul>
