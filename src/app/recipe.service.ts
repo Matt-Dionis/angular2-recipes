@@ -20,7 +20,7 @@ export class RecipeService {
       .catch(this.handleError);
   }
 
-  delete(id: string): Observable<Recipe[]> {
+  delete(id: string): Observable<void> {
     return this._http.delete(`${this.recipesUrl}/${id}`)
       .map(() => null)
       .catch(this.handleError);
