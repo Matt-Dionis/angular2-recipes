@@ -6,7 +6,7 @@ import { Recipe } from './recipe';
 
 @Injectable()
 export class RecipeService {
-  private recipesUrl = 'app/recipes';
+  private recipesUrl = 'api/recipes';
 
   constructor (private _http: Http) {}
 
