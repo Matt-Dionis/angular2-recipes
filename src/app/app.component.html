@@ -1,11 +1,12 @@
 <h1>
   {{title}}
 </h1>
-<ul>
-  <li *ngFor="let recipe of recipes">
-    <p>{{recipe.name}}
+<md-list>
+  <md-list-item *ngFor="let recipe of recipes">
+    <p>{{recipe.name}}</p>
       <span [ngClass]="setColor(recipe.type)">{{recipe.type}}</span>
-      <button (click)="deleteRecipe(recipe.id)">x</button>
-    </p>
-  </li>
-</ul>
+      <button md-icon-button color="warn" (click)="deleteRecipe(recipe.id)">
+        <md-icon class="md-24">close</md-icon>
+      </button>
+  </md-list-item>
+</md-list>
