@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { MaterialModule } from '@angular/material';
 
 import { RecipesData } from './recipes-data';
 import { AppComponent } from './app.component';
@@ -15,7 +16,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(RecipesData)
+    InMemoryWebApiModule.forRoot(RecipesData),
+    MaterialModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
