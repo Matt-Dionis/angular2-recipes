@@ -10,7 +10,7 @@ export class RecipeService {
 
   constructor (private _http: Http) {}
 
-  add(recipe: Recipe): Observable<Recipe[]> {
+  add(recipe: Recipe): Observable<Recipe> {
     let bodyString = JSON.stringify(recipe);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });

@@ -6,7 +6,48 @@
     <p>{{recipe.name}}</p>
     <span [ngClass]="setColor(recipe.type)">{{recipe.type}}</span>
     <button md-icon-button color="warn" (click)="deleteRecipe(recipe.id)">
-      <md-icon class="md-24">close</md-icon>
+      <md-icon>close</md-icon>
     </button>
   </md-list-item>
 </md-list>
+<md-card>
+  <md-toolbar color="primary"><md-icon>restaurant_menu</md-icon> Add a Recipe</md-toolbar>
+  <md-card-content>
+    {{diagnostic}}
+    <form (ngSubmit)="onSubmit()">
+      <br>
+      <div>
+        <label for="type">Type</label>
+        <select id="type" name="type" [(ngModel)]="newRecipe.type" required>
+          <option *ngFor="let type of types" [value]="type">{{type}}</option>
+        </select>
+      </div>
+      <div>
+        <label for="name">Name</label>
+        <md-input type="text" id="name" name="name" [(ngModel)]="newRecipe.name" placeholder="name of meal" required></md-input>
+      </div>
+      <div>
+        <label for="instructions">Instructions</label>
+        <md-textarea name="instructions" [(ngModel)]="newRecipe.instructions" placeholder="Step-by-step instructions" required></md-textarea>
+      </div>
+      <div>
+        <h4>Ingredients</h4>
+        <div *ngFor="let ingredient of newRecipe.ingredients; let i = index; let f = first; let l = last">
+          <md-input type="text" id="ingredientName" name="ingredientName_{{i}}" [(ngModel)]="ingredient.name" placeholder="ingredient" required></md-input>
+          <md-input type="text" id="ingredientAmount" name="ingredientAmount_{{i}}" [(ngModel)]="ingredient.amount" placeholder="amount" required></md-input>
+          <select id="ingredientMeasurement" name="ingredientMeasurement_{{i}}" [(ngModel)]="ingredient.measurement" required>
+            <option *ngFor="let measurement of measurements" [value]="measurement">{{measurement}}</option>
+          </select>
+          <button md-icon-button color="primary" *ngIf="l" (click)="addIngredient()">
+            <md-icon>add</md-icon>
+          </button>
+          <button md-icon-button color="warn" *ngIf="!f" (click)="removeIngredient(i)">
+            <md-icon>remove</md-icon>
+          </button>
+        </div>
+      </div>
+      <br>
+      <button md-raised-button color="primary" type="submit"><md-icon>add</md-icon> Add Recipe</button>
+    </form>
+  </md-card-content>
+</md-card>
