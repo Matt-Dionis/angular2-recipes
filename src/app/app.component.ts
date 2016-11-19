@@ -67,8 +67,4 @@ export class AppComponent {
     const color = type === 'appetizer' ? 'blue' : type === 'entrée' ? 'green' : 'red';
     return color + ' badge';
   }
-
-  get diagnostic() {
-    return JSON.stringify(this.newRecipe);
-  }
 }
