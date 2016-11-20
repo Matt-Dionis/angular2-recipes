@@ -16,7 +16,7 @@ export class RecipesComponent {
   measurements = ['cup', 'lb', 'oz', 'tbsp', 'tsp', 'whole'];
   newRecipe: Recipe = new Recipe();
   recipes: Recipe[];
-  title: String = 'Recipes';
+  title: string = 'Recipes';
   types = ['appetizer', 'entrée', 'dessert'];
 
   constructor (private _recipeService: RecipeService) {
