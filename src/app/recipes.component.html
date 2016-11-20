@@ -3,7 +3,7 @@
 </h1>
 <md-list>
   <md-list-item *ngFor="let recipe of recipes">
-    <p>{{recipe.name}}</p>
+    <a [routerLink]="['/recipes', recipe.id]">{{recipe.name}}</a>
     <span [ngClass]="setColor(recipe.type)">{{recipe.type}}</span>
     <button md-icon-button color="warn" (click)="deleteRecipe(recipe.id)">
       <md-icon>close</md-icon>
