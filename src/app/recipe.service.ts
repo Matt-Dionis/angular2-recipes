@@ -38,13 +38,13 @@ export class RecipeService {
       .catch(this.handleError);
   }
 
-  update(recipe: Recipe): Observable<Recipe[]> {
+  update(recipe: Recipe): Observable<void> {
     let bodyString = JSON.stringify(recipe);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
     return this._http.put(`${this.recipesUrl}/${recipe['id']}`, recipe, options)
-      .map(this.extractData)
+      .map(() => null)
       .catch(this.handleError);
   }
 
