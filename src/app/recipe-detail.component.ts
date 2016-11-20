@@ -8,12 +8,7 @@ import { RecipeService } from './recipe.service';
 
 @Component({
   selector: 'recipe-detail',
-  template: `
-    <button md-button (click)="goBack()">
-      <md-icon>arrow_back</md-icon> Back
-    </button>
-    <h3 *ngIf="recipe">Recipe ID: {{recipe.id}}</h3>
-  `
+  templateUrl: './recipe-detail.component.html'
 })
 export class RecipeDetailComponent {
   recipe: Recipe;
@@ -33,4 +28,4 @@ export class RecipeDetailComponent {
   goBack(): void {
     this._location.back();
   }
- }
+}

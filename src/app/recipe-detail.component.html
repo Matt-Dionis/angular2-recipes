@@ -1,0 +1,12 @@
+<button md-button (click)="goBack()">
+  <md-icon>arrow_back</md-icon> Back
+</button>
+<div *ngIf="recipe">
+  <h3>{{recipe.name}}</h3>
+  <p>{{recipe.instructions}}</p>
+  <ul>
+    <li *ngFor="let ingredient of recipe.ingredients">
+      {{ingredient.amount}} {{ingredient.measurement}} {{ingredient.name}}
+    </li>
+  </ul>
+</div>
