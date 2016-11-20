@@ -6,11 +6,11 @@ import { Recipe } from './recipe';
 import { RecipeService } from './recipe.service';
 
 @Component({
-  selector: 'recipes',
+  selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css']
 })
-export class RecipesComponent {
+export class RecipesComponent implements OnInit {
   errorMessage: string;
   nextId: number;
   measurements = ['cup', 'lb', 'oz', 'tbsp', 'tsp', 'whole'];
@@ -35,7 +35,7 @@ export class RecipesComponent {
     this._recipeService.delete(id)
       .subscribe(() => {
         this.recipes = this.recipes.filter(h => h.id !== id),
-        error =>  this.errorMessage = <any>error
+        error =>  this.errorMessage = <any>error;
       });
   }
 

@@ -11,7 +11,6 @@ export class RecipeService {
   constructor (private _http: Http) {}
 
   add(recipe: Recipe): Observable<Recipe> {
-    let bodyString = JSON.stringify(recipe);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
@@ -39,7 +38,6 @@ export class RecipeService {
   }
 
   update(recipe: Recipe): Observable<void> {
-    let bodyString = JSON.stringify(recipe);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
 
